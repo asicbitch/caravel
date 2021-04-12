@@ -1,0 +1,29 @@
+CAPI=2:
+
+name : ::digital_pll:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/digital_pll.v
+            - src/rtl/digital_pll_controller.v
+            - src/rtl/ring_osc2x13.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl
+            - src/pdn.tcl
+        file_type : tclSource
+
+targets:
+    default:
+        filesets : [rtl]
+
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : digital_pll
+        tools:
+            openlane:
+                pdn_name: pdn.tcl
