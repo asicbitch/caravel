@@ -1,0 +1,18 @@
+CAPI=2:
+
+name : ::user_id_programming:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/blackbox/user_id_programming.v : {file_type : verilogSource}
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : user_id_programming
