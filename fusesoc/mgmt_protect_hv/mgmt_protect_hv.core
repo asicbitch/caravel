@@ -1,0 +1,24 @@
+CAPI=2:
+
+name : ::mgmt_protect_hv:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/mgmt_protect_hv.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pin_order.cfg : {file_type : cfgSource}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : mgmt_protect_hv
+        tools:
+            openlane:
+                pin_order_name : pin_order.cfg
