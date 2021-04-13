@@ -1,0 +1,31 @@
+CAPI=2:
+
+name : ::DFFRAM:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/DFFRAM.v
+            - src/rtl/DFFRAMBB.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl
+            - src/pdn.tcl
+            - src/pin_order.cfg : {file_type : cfgSource}
+        file_type : tclSource
+
+targets:
+    default:
+        filesets : [rtl]
+
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : DFFRAM
+        tools:
+            openlane:
+                pdn_name: pdn.tcl
+                pin_order_name : pin_order.cfg
