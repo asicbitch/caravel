@@ -1,0 +1,25 @@
+CAPI=2:
+
+name : ::mprj2_logic_high:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/mprj2_logic_high.v : {file_type : verilogSource}
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pin_order.cfg : {file_type : cfgSource}
+
+targets:
+    default:
+        filesets : [rtl]
+
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : mprj2_logic_high
+        tools:
+            openlane:
+                pin_order_name : pin_order.cfg
