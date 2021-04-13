@@ -10,7 +10,7 @@ filesets:
     config:
         files:
             - src/params.tcl : {file_type : tclSource}
-            - src/pin_order.cfg : {file_type : cfgSource}
+            - src/pin_order.cfg : {file_type : pinOrder}
 
 targets:
     default:
@@ -20,6 +20,3 @@ targets:
         default_tool : openlane
         filesets : [rtl, config]
         toplevel : mprj2_logic_high
-        tools:
-            openlane:
-                pin_order_name : pin_order.cfg

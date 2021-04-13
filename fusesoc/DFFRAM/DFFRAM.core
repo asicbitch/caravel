@@ -13,8 +13,8 @@ filesets:
     config:
         files:
             - src/params.tcl
-            - src/pdn.tcl
-            - src/pin_order.cfg : {file_type : cfgSource}
+            - src/pdn.tcl : {file_type : pdn}
+            - src/pin_order.cfg : {file_type : pinOrder}
         file_type : tclSource
 
 targets:
@@ -25,7 +25,3 @@ targets:
         default_tool : openlane
         filesets : [rtl, config]
         toplevel : DFFRAM
-        tools:
-            openlane:
-                pdn_name: pdn.tcl
-                pin_order_name : pin_order.cfg

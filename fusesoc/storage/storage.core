@@ -1,0 +1,26 @@
+CAPI=2:
+
+name : ::storage:1.0.0
+
+filesets:
+    source:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/storage.v
+            - src/blackbox/sram_1rw1r_32_256_8_sky130.v : {file_type : verilogBlackbox}
+            - src/lef/sram_1rw1r_32_256_8_sky130_lp1.lef : {file_type : LEF}
+            - src/gds/sram_1rw1r_32_256_8_sky130.gds : {file_type : GDS}
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pdn.tcl : {file_type : pdn}
+            - src/pin_order.cfg : {file_type : pinOrder}
+            - src/macro_placement.cfg : {file_type : macroPlacement}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [source, config]
+        toplevel : storage

@@ -13,7 +13,7 @@ filesets:
     config:
         files:
             - src/params.tcl
-            - src/pdn.tcl
+            - src/pdn.tcl : {file_type : pdn}
         file_type : tclSource
 
 targets:
@@ -24,6 +24,3 @@ targets:
         default_tool : openlane
         filesets : [rtl, config]
         toplevel : digital_pll
-        tools:
-            openlane:
-                pdn_name: pdn.tcl

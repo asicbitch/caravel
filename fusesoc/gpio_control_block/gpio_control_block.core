@@ -12,13 +12,10 @@ filesets:
     config:
         files:
             - src/params.tcl : {file_type : tclSource}
-            - src/pin_order.cfg : {file_type : cfgSource}
+            - src/pin_order.cfg : {file_type : pinOrder}
 
 targets:
     build:
         default_tool : openlane
         filesets : [rtl, config]
         toplevel : user_id_programming
-        tools:
-            openlane:
-                pin_order_name : pin_order.cfg
