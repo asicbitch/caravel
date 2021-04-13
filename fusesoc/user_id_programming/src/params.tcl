@@ -13,7 +13,6 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-set script_dir [pwd]
 # User config
 set ::env(DESIGN_NAME) user_id_programming
 

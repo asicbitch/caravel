@@ -13,23 +13,15 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-# User config
-set ::env(DESIGN_NAME) digital_pll
+set ::env(DESIGN_NAME) gpio_control_block
 
-# Change if needed
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
-
-# Fill this
-set ::env(CLOCK_TREE_SYNTH) 0
-set ::env(FP_PDN_CORE_RING) 0
-set ::env(FP_PDN_VPITCH) 50
-set ::env(FP_PDN_HPITCH) 50
-set ::env(SYNTH_BUFFERING) 0
-set ::env(SYNTH_SIZING) 0
-set ::env(CELL_PAD) 4
-set ::env(FP_CORE_UTIL) 50
-set ::env(PL_TARGET_DENSITY) 0.55
-set ::env(SYNTH_MAX_FANOUT) 6
-set ::env(FP_PDN_CORE_RING) 1
-set ::env(DESIGN_IS_CORE) 0
-set ::env(GLB_RT_MAXLAYER) 5
+set ::env(CLOCK_PORT) "serial_clock"
+set ::env(CLOCK_PERIOD) "10"
+set ::env(FP_SIZING) absolute
+set ::env(DIE_AREA) "0 0 175 95"
+set ::env(PL_TARGET_DENSITY) 0.4
+set ::env(PL_BASIC_PLACEMENT) 1
+set ::env(RIGHT_MARGIN_MULT) 272
+set ::env(FP_IO_HLENGTH) 200
+set ::env(GLB_RT_MAXLAYER) 4

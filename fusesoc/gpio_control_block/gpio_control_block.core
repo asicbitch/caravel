@@ -1,0 +1,24 @@
+CAPI=2:
+
+name : ::gpio_control_block:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/gpio_control_block.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pin_order.cfg : {file_type : cfgSource}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : user_id_programming
+        tools:
+            openlane:
+                pin_order_name : pin_order.cfg
