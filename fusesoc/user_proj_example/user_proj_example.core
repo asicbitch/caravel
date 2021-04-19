@@ -1,0 +1,21 @@
+CAPI=2:
+
+name : ::user_proj_example:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/user_proj_example.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pin_order.cfg : {file_type : pinOrder}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : user_proj_example
