@@ -1,0 +1,32 @@
+CAPI=2:
+
+name : ::mgmt_protect:1.0.0
+
+filesets:
+    rtl:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/mgmt_protect.v
+            - src/blackbox/mprj_logic_high.v : {file_type : verilogBlackbox}
+            - src/blackbox/mprj2_logic_high.v : {file_type : verilogBlackbox}
+            - src/blackbox/mgmt_protect_hv.v : {file_type : verilogBlackbox}
+            - src/LEF/mprj_logic_high.lef : {file_type : LEF}
+            - src/LEF/mprj2_logic_high.lef : {file_type : LEF}
+            - src/LEF/mgmt_protect_hv.lef : {file_type : LEF}
+            - src/GDS/mprj_logic_high.gds : {file_type : GDS}
+            - src/GDS/mprj2_logic_high.gds : {file_type : GDS}
+            - src/GDS/mgmt_protect_hv.gds : {file_type : GDS}
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/pin_order.cfg : {file_type : pinOrder}
+            - src/macro_placement.cfg : {file_type : macroPlacement}
+            - src/pdn.tcl : {file_type : pdn}
+
+targets:
+    build:
+        default_tool : openlane
+        filesets : [rtl, config]
+        toplevel : mgmt_protect

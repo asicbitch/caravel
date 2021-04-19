@@ -1,0 +1,72 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO mprj2_logic_high
+  CLASS BLOCK ;
+  FOREIGN mprj2_logic_high ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 119.980 BY 8.640 ;
+  PIN HI
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.190 5.040 4.190 5.640 ;
+    END
+  END HI
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT 90.040 0.000 90.340 8.640 ;
+    END
+  END vccd2
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT 10.040 0.000 10.340 8.640 ;
+    END
+  END vccd2
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met3 ;
+        RECT 0.190 0.850 119.790 1.150 ;
+    END
+  END vccd2
+  PIN vssd2
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met2 ;
+        RECT 50.040 0.000 50.340 8.640 ;
+    END
+  END vssd2
+  PIN vssd2
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met3 ;
+        RECT 0.190 6.250 119.790 6.550 ;
+    END
+  END vssd2
+  OBS
+      LAYER li1 ;
+        RECT 0.190 0.155 119.790 8.485 ;
+      LAYER met1 ;
+        RECT 0.190 0.000 119.790 8.640 ;
+      LAYER met2 ;
+        RECT 17.300 2.290 49.760 5.525 ;
+        RECT 50.620 2.290 82.890 5.525 ;
+      LAYER met3 ;
+        RECT 4.590 4.640 90.355 5.850 ;
+        RECT 4.190 1.550 90.355 4.640 ;
+  END
+END mprj2_logic_high
+END LIBRARY
+

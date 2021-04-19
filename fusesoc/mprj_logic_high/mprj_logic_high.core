@@ -1,0 +1,22 @@
+CAPI=2:
+
+name : ::mprj_logic_high:1.0.0
+
+filesets:
+    sources:
+        files:
+            - src/rtl/mprj_logic_high.v
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+
+targets:
+    default:
+        filesets : [sources]
+
+    build:
+        default_tool : openlane
+        filesets : [sources, config]
+        toplevel : mprj_logic_high
