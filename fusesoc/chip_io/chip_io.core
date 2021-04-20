@@ -1,0 +1,28 @@
+CAPI=2:
+
+name : ::chip_io:1.0.0
+
+filesets:
+    sources:
+        files:
+            - src/rtl/defines.v
+            - src/rtl/pads.v
+            - src/rtl/mprj_io.v
+            - src/rtl/chip_io.v
+            - src/blackbox/sky130_fd_io__top_xres4v2.v : {file_type : verilogBlackbox}
+        file_type : verilogSource
+    
+    config:
+        files:
+            - src/params.tcl : {file_type : tclSource}
+            - src/interactive.tcl : {file_type : interactive}
+            - src/padframe.cfg : {file_type : cfg}
+
+targets:
+    default:
+        filesets : [sources]
+
+    build:
+        default_tool : openlane
+        filesets : [sources, config]
+        toplevel : chip_io
